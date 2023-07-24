@@ -14,15 +14,15 @@
 
                 default_layer {
 // --------------------------------------------------------------------------------------------------------------------
-// | LALT  (TAB) |            Q  |            W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | LALT  (BSPC) |
-// | LCTRL (ESC) | Spectacle (A) | Spectacle (S) |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | LCTRL ( RET) |
-// |  SHFT ( ` ) |            Z  |            X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT  (   ') |
-//                                               | LGUI ([) | LWR | SPC | RSE  | LGUI (]) |
+// | LALT  (TAB) |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | LALT  (BSPC) |
+// | LCTRL (ESC) |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | LCTRL ( RET) |
+// |  SHFT ( ` ) |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT  (   ') |
+//                          | LGUI ([) | LWR |  SPC  | RSE  | LGUI (]) |
                         bindings = <
-   &mt  LALT   TAB &kp Q              &kp W              &kp E &kp R &kp T   &kp Y &kp U &kp I     &kp O   &kp P    &mt  LALT BSPC
-   &mt LCTRL   ESC &mt LA(LS(LGUI)) A &mt LA(LC(LGUI)) S &kp D &kp F &kp G   &kp H &kp J &kp K     &kp L   &kp SEMI &mt LCTRL  RET
-   &mt LSHFT GRAVE &kp Z              &kp X              &kp C &kp V &kp B   &kp N &kp M &kp COMMA &kp DOT &kp FSLH &mt RSHFT  SQT
-                                     &mt LGUI LBKT &mo LOWER_LAYER   &kp SPACE   &mo RAISE_LAYER  &mt LGUI RBKT
+   &mt  LALT   TAB &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I     &kp O   &kp P    &mt  LALT BSPC
+   &mt LCTRL   ESC &kp A &kp S &kp D &kp F &kp G   &kp H &kp J &kp K     &kp L   &kp SEMI &mt LCTRL  RET
+   &mt LSHFT GRAVE &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M &kp COMMA &kp DOT &kp FSLH &mt RSHFT  SQT
+           &mt LGUI LBKT &mo LOWER_LAYER   &kp SPACE   &mo RAISE_LAYER  &mt LGUI RBKT
                         >;
                 };
 
@@ -35,7 +35,7 @@
                         bindings = <
    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL  &kp BACKSLASH &kp BSPC
    &trans  &trans  &trans  &trans  &trans  &trans  &kp N6  &kp N7  &kp N8     &kp N9     &kp N0        &trans
-   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp C_PREV &kp C_PP   &kp C_NEXT    &trans
+   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans        &trans
                   &trans      &trans       &trans        &mo ADJUST_LAYER       &trans
                         >;
                 };
@@ -47,24 +47,24 @@
 // |    |     |     |     |     |     |   |     |      |      |     |       |     |
 //                       |     | ADJ |     |     |     |
                         bindings = <
-   &trans     &trans       &trans       &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans     &kp DEL
-   &trans     &kp N1       &kp N2       &kp N3  &kp N4  &kp N5  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-   &kp K_MUTE &kp C_VOL_DN &kp K_VOL_UP &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans     &trans
+   &trans  &trans  &trans &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans     &kp DEL
+   &trans  &kp N1  &kp N2 &kp N3  &kp N4  &kp N5  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+   &trans  &trans  &trans &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans     &trans
                   &trans      &mo ADJUST_LAYER       &trans        &trans       &trans
                         >;
                 };
 
                 adjust_layer {
 // -----------------------------------------------------------------------------------------
-// |    F1    |    F2    |    F3    |    F4    | F5 |    F6   |    |  F7 |  F8 |  F9 | F10 | F11 | F12 |
-// | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |    | RGB TOG |    | BT1 | BT2 | BT3 | BT4 | BT5 | BT CLR |
-// | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI- |    |         |    |     |     |     |     |     |        |
+// |    F1    |    F2    |    F3    |    F4       |     F5         |    F6           |    |  F7 |     F8      |  F9  | F10  | F11  | F12    |
+// |          |          |          |             | Spectacle+F    |                 |    | BT1 |     BT2     | BT3  | BT4  | BT5  | BT CLR |
+// |   Mute   | Vol_Down |  Vol_Up  | Spectacle+C | Spectacle+Left | Spectacle+Right |    |     | Spectacle+M | PREV | PLAY | NEXT |        |
 //                                               |     |     |      |     |     |
                         bindings = <
-   &kp F1          &kp F2          &kp F3          &kp F4          &kp F5 &kp F6             &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
-   &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none  &rgb_ug RGB_TOG    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-   &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none  &none              &none        &none        &none        &none        &none        &none
-                                                               &trans      &trans       &trans        &trans       &trans
+   &kp F1     &kp F2       &kp F3       &kp F4            &kp F5               &kp F6                &kp F7       &kp F8            &kp F9       &kp F10      &kp F11      &kp F12
+   &none      &none        &none        &none             &kp LA(LS(LG(F)))    &none                 &bt BT_SEL 0 &bt BT_SEL 1      &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
+   &kp K_MUTE &kp C_VOL_DN &kp K_VOL_UP &kp LA(LS(LG(C))) &kp LA(LS(LG(LEFT))) &kp LA(LS(LG(RIGHT))) &none        &kp LA(LS(LG(M))) &kp C_PREV   &kp C_PP     &kp C_NEXT   &none
+                                          &trans      &trans       &trans        &trans       &trans
                         >;
                 };
         };
